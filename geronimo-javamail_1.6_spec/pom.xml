@@ -40,10 +40,17 @@
 
     <url>http://geronimo.apache.org/maven/${siteId}/${project.version}</url>
     <distributionManagement>
-        <site>
-            <id>apache-website</id>
-            <url>${site.deploy.url}/maven/${siteId}/${project.version}</url>
-        </site>
+        <repository>
+            <id>tomitribe.releases.https</id>
+            <name>Tomitribe Release Distribution Repository</name>
+            <url>https://repository.tomitribe.com/service/local/staging/deploy/maven2</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>tomitribe.snapshots.https</id>
+            <name>Tomitribe Development Snapshot Repository</name>
+            <url>https://repository.tomitribe.com/content/repositories/snapshots-tomitribe</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <properties>
@@ -58,6 +65,14 @@
         <url>scm:git:git@github.com:tomitribe/geronimo-specs.git</url>
         <tag>HEAD</tag>
     </scm>
+
+    <repositories>
+        <repository>
+            <id>tomitribe-all</id>
+            <name>Tomitribe Repository</name>
+            <url>https://repository.tomitribe.com/content/groups/tomitribe/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -153,6 +168,11 @@
                         <_contract>JavaActivation</_contract>
                     </instructions>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
             </plugin>
         </plugins>
     </build>
