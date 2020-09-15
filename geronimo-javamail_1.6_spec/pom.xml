@@ -34,7 +34,7 @@
     <artifactId>geronimo-javamail_1.6_spec</artifactId>
     <packaging>bundle</packaging>
     <name>Apache Geronimo JavaMail Spec 1.6</name>
-    <version>0.0.1-TT.M1</version>
+    <version>0.0.1-TT.M2-SNAPSHOT</version>
 
     <description>Javamail 1.6 API Specification</description>
 
@@ -63,7 +63,7 @@
         <connection>scm:git:git@github.com:tomitribe/geronimo-specs.git</connection>
         <developerConnection>scm:git:git@github.com:tomitribe/geronimo-specs.git</developerConnection>
         <url>scm:git:git@github.com:tomitribe/geronimo-specs.git</url>
-        <tag>geronimo-javamail_1.6_spec-0.0.1-TT.M1</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <repositories>
