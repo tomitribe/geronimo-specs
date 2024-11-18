@@ -34,16 +34,22 @@
     <artifactId>geronimo-javamail_1.4_spec</artifactId>
     <packaging>bundle</packaging>
     <name>Apache Geronimo JavaMail Spec 1.4</name>
-    <version>1.7.2-alpha-1</version>
+    <version>1.7.2-alpha-1-TT.1-SNAPSHOT</version>
 
     <description>Javamail 1.4 API Specification</description>
 
     <url>http://geronimo.apache.org/maven/${siteId}/${project.version}</url>
     <distributionManagement>
-        <site>
-            <id>apache-website</id>
-            <url>${site.deploy.url}/maven/${siteId}/${project.version}</url>
-        </site>
+        <repository>
+            <id>tomitribe.releases.https</id>
+            <name>Tomitribe Release Distribution Repository</name>
+            <url>https://repository.tomitribe.com/service/local/staging/deploy/maven2</url>
+        </repository>
+        <snapshotRepository>
+            <id>tomitribe.snapshots.https</id>
+            <name>Tomitribe Development Snapshot Repository</name>
+            <url>https://repository.tomitribe.com/content/repositories/snapshots-tomitribe</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <properties>
@@ -53,10 +59,18 @@
     </properties>
 
     <scm>
-        <connection>scm:svn:https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-javamail_1.4_spec-1.7.2-alpha-1</connection>
-        <developerConnection>scm:svn:https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-javamail_1.4_spec-1.7.2-alpha-1</developerConnection>
-        <url>https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-javamail_1.4_spec-1.7.2-alpha-1</url>
+        <connection>scm:git:git@github.com:tomitribe/geronimo-specs.git</connection>
+        <developerConnection>scm:git:git@github.com:tomitribe/geronimo-specs.git</developerConnection>
+        <url>scm:git:git@github.com:tomitribe/geronimo-specs.git</url>
     </scm>
+
+    <repositories>
+        <repository>
+            <id>tomitribe-all</id>
+            <name>Tomitribe Repository</name>
+            <url>https://repository.tomitribe.com/content/groups/tomitribe/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
