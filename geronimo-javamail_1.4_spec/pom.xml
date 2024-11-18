@@ -62,7 +62,8 @@
         <connection>scm:git:git@github.com:tomitribe/geronimo-specs.git</connection>
         <developerConnection>scm:git:git@github.com:tomitribe/geronimo-specs.git</developerConnection>
         <url>scm:git:git@github.com:tomitribe/geronimo-specs.git</url>
-    </scm>
+      <tag>HEAD</tag>
+  </scm>
 
     <repositories>
         <repository>
@@ -111,6 +112,22 @@
     </dependencies>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
+                    <configuration>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <allowTimestampedSnapshots>false</allowTimestampedSnapshots>
+                        <preparationGoals>clean install</preparationGoals>
+                        <goals>deploy</goals>
+                        <useReleaseProfile>false</useReleaseProfile>
+                        <arguments>-Papache-release </arguments>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
